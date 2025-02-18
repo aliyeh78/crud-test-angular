@@ -1,0 +1,17 @@
+<div class="input-group">
+  <label [for]="formControlName">{{ label }}</label>
+  <input
+    [id]="formControlName"
+    [type]="type"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    (input)="onInputChange($event)"
+  />
+
+  <div class="error-messages" *ngIf="isControlTouched() && isControlInvalid()">
+    <small *ngIf="hasError('required')">{{ label }} is required.</small>
+    <small *ngIf="hasError('email')">Invalid email format.</small>
+    <small *ngIf="hasError('uniqueEmail')">Email already exists.</small>
+    <small *ngIf="hasError('invalidMobile')">Invalid mobile number.</small>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+
+  <app-input-field
+    label="First Name"
+    type="text"
+    placeholder="Enter first name"
+    formControlName="FirstName"
+    [parentForm]="customerForm"
+  ></app-input-field>
+
+  <app-input-field
+    label="Last Name"
+    type="text"
+    placeholder="Enter last name"
+    formControlName="LastName"
+    [parentForm]="customerForm"
+  ></app-input-field>
+
+  <app-input-field
+    label="email"
+    type="email"
+    placeholder="Enter email"
+    formControlName="email"
+    [parentForm]="customerForm"
+  ></app-input-field>
+
+  <app-input-field
+    label="Phone Number"
+    type="text"
+    placeholder="Enter phone number"
+    formControlName="phoneNumber"
+    [parentForm]="customerForm"
+  ></app-input-field>
+
+  <app-input-field
+    label="Date of Birth"
+    type="date"
+    placeholder="Select birth date"
+    formControlName="dateOfBirth"
+    [parentForm]="customerForm"
+  ></app-input-field>
+
+  <app-input-field
+    label="Bank Account Number"
+    type="text"
+    placeholder="Enter bank account number"
+    formControlName="bankAccountNumber"
+    [parentForm]="customerForm"
+  ></app-input-field>
+
+  <button type="submit" [disabled]="customerForm.invalid">Submit</button>
+</form>
